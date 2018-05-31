@@ -4,7 +4,7 @@ Feature: Customer Sign Up
   So that I can create my account
 
   Scenario: New Customer Sign up
-  Given I am at "Minishop home" page
+  Given I am at Minishop home page
   When I click "Sign Up" link
   Then I should be redirected to "Sign Up" page
 
