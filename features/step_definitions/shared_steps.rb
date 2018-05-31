@@ -1,5 +1,5 @@
-Given("I am at {string} page") do |string|
-  visit(string)
+Given("I am at Minishop home page") do
+  visit root_path
 end
 
 When("I click {string} link") do |string|
