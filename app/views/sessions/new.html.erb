@@ -1,1 +1,33 @@
-<h1>Login</h1>
+
+<% provide(:title, 'Log In') %>
+
+<div class="main-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div id="login-header">
+          <a class="navbar-brand" href="/">
+            <%= fa_icon "bolt"%> Minishop
+          </a>
+        </div>
+        <div class="app-content" id="login-area">
+          <%= form_for(:session, url: login_path, html: { class: "login-from"}) do |f| %>
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :password %>
+              <%= f.password_field :password, class: 'form-control' %>
+            </div>
+            <div class="form-group" id="login-submit">
+              <%= f.submit "Log In", class: "btn btn-success btn-block" %>
+            </div>
+            
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
