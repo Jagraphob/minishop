@@ -7,5 +7,5 @@ When("I click {string} link") do |string|
 end
 
 Then("I should be redirected to {string} page") do |string|
-  expect(page).to have_content(string)
+  expect(page).to have_title("Minishop | " + string)
 end

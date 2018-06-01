@@ -1,7 +1,7 @@
 Feature: Customer Sign Up
   As a customer
-  I want to be able to get to Minishop sign up page
-  So that I can create my account
+  I want to be able sign up to Minishop
+  So that I can have electricity at my property
 
   Scenario: New Customer Sign up
   Given I am at Minishop home page
