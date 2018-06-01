@@ -11,6 +11,7 @@
           </a>
         </div>
         <div class="app-content" id="login-area">
+          <%= render 'layouts/flash' %>
           <%= form_for(:session, url: login_path, html: { class: "login-from"}) do |f| %>
             <div class="form-group">
               <%= f.label :email %>
