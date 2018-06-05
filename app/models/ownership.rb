@@ -4,5 +4,5 @@ class Ownership < ApplicationRecord
 
   enum status: [:pending, :active, :archived]
 
-  validates :status, presence: true
+  validates :status, :presence => true
 end
