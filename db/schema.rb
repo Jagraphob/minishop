@@ -10,22 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_040137) do
+ActiveRecord::Schema.define(version: 2018_06_05_034420) do
 
-  create_table "roles", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "customer_profiles", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "phone_number", null: false
+    t.string "card_number", null: false
+    t.index ["user_id"], name: "index_customer_profiles_on_user_id"
+  end
+
+  create_table "ownerships", force: :cascade do |t|
+    t.integer "customer_profile_id"
+    t.integer "property_id"
+    t.integer "status", default: 0
+    t.index ["customer_profile_id", "property_id"], name: "index_ownerships_on_customer_profile_id_and_property_id"
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.string "number", null: false
+    t.string "street_name", null: false
+    t.string "suburb", null: false
+    t.string "city", null: false
+    t.string "region", null: false
+    t.string "postcode"
+    t.string "icp_number"
+  end
+
+  create_table "register_serials", force: :cascade do |t|
+    t.integer "property_id"
+    t.integer "meter_number"
+    t.integer "register_number"
+    t.integer "register_decimals"
+    t.index ["property_id"], name: "index_register_serials_on_property_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
-    t.string "email"
-    t.integer "role_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["role_id"], name: "index_users_on_role_id"
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "email", null: false
+    t.integer "role", default: 1
+    t.integer "status", default: 1
+    t.index ["email"], name: "index_users_on_email"
   end
 
 end
