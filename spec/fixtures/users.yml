@@ -1,0 +1,15 @@
+user1:
+  id: 1
+  first_name: 'Toh'
+  lastname: 'Jantakananuruk'
+  email: 'toh@fluxfederation.com'
+  role: 0
+  status: 1
+
+user2:
+  id: 2
+  first_name: 'Bow'
+  last_name: 'Jantakananuruk'
+  email: 'bow@gmail.com'
+  role: 0
+  status: 1
