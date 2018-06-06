@@ -7,7 +7,6 @@ p1:
   region: 'Wellington'
   postcode: '5010'
   icp_number: '456789123'
-
 p2:
   id: 2
   number: '27'

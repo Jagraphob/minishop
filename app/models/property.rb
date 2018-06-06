@@ -9,4 +9,5 @@ class Property < ApplicationRecord
   validates :suburb, :presence => true
   validates :city, :presence => true
   validates :region, :presence => true
+  validates :icp_number, :uniqueness => true
 end

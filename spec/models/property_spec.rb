@@ -19,5 +19,8 @@ RSpec.describe Property, type: :model do
     it 'validates the presence of region' do
       expect(Property.new).to validate_presence_of(:region)
     end
+    it 'validates the uniqueness of icp_number' do
+      expect(Property.new).to validate_uniqueness_of(:icp_number).case_insensitive
+    end
   end
 end
