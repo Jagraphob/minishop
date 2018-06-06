@@ -4,10 +4,10 @@ RSpec.describe User, type: :model do
   fixtures :users
 
   describe 'validations' do
-    it 'validates the presence of firstname' do
+    it 'validates the presence of first_name' do
       expect(User.new).to validate_presence_of(:first_name)
     end
-    it 'validates the presence of lastname' do
+    it 'validates the presence of last_name' do
       expect(User.new).to validate_presence_of(:last_name)
     end
     it 'validates the presence of email' do
