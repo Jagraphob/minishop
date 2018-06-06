@@ -1,0 +1,19 @@
+p1:
+  id: 1
+  number: '66'
+  street_name: 'Owen Street'
+  suburb: 'Belmont'
+  city: 'Lower Hutt'
+  region: 'Wellington'
+  postcode: '5010'
+  icp_number: '456789123'
+
+p2:
+  id: 2
+  number: '27'
+  street_name: 'McBain Grove'
+  suburb: 'Avalon'
+  city: 'Lower Hutt'
+  region: 'Wellington'
+  postcode: '5011'
+  icp_number: '748159263'

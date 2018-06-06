@@ -1,0 +1,10 @@
+cp1:
+  id: 1
+  phone_number: '0210577330'
+  card_number: '4444666633330777'
+  user_id: 1
+cp2:
+  id: 2
+  phone_number: '0211234567'
+  card_number: '5555222211110888'
+  user_id: 1

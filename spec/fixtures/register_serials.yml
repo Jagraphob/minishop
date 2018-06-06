@@ -1,0 +1,12 @@
+rs1:
+  id: 1
+  meter_number: 111
+  register_number: 01
+  register_decimals: 0
+  property_id: 1
+rs2:
+  id: 2
+  meter_number: 222
+  register_number: 03
+  register_decimals: 0
+  property_id: 2
