@@ -12,7 +12,7 @@
         </div>
         <div class="app-content" id="login-area">
           <%= render 'layouts/flash' %>
-          <%= form_for(:session, url: login_path, html: { class: "login-from"}) do |f| %>
+          <%= form_with :scope => :session, :url => login_path, :html => { class: "login-from"}, local: true do |f| %>
             <div class="form-group">
               <%= f.label :email %>
               <%= f.email_field :email, class: 'form-control' %>
@@ -24,7 +24,6 @@
             <div class="form-group" id="login-submit">
               <%= f.submit "Log In", class: "btn btn-success btn-block" %>
             </div>
-            
           <% end %>
         </div>
       </div>
