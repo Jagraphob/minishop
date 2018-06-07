@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get '/signup', to: 'customers#new'
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
 
-  resources :customers
+  resources :customer_profiles
+  resources :users
+  resources :properties
 
   root 'home#index'
 end
