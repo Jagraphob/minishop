@@ -1,0 +1,46 @@
+<% provide(:title, 'Sign Up') %>
+
+<%= render 'navbar' %>
+
+<div class="signup-background">
+  <div class="container">
+    <div class="content-wrapper">
+      <h1>Join Minishop</h1>
+      <div>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active">Step 1: Account Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Step 2: Customer Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Step 3: Properties Information</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <div id="signup-form">
+          <%= render 'layouts/flash' %>      
+          <%= form_with model: @user, local: true do |f| %>
+            <div class="form-group">
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, class: 'form-control' %>
+            </div>
+            <div class="form-group">
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'form-control' %>
+            </div>
+            <%= f.submit "Continue", class: "btn btn-success" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
