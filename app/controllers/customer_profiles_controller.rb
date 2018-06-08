@@ -8,7 +8,6 @@ class CustomerProfilesController < ApplicationController
   end
 
   def create
-    byebug
     @customer_profile = CustomerProfile.new(customer_profile_params)
 
     if @customer_profile.save
