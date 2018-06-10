@@ -3,8 +3,7 @@ class CustomerProfilesController < ApplicationController
   end
   
   def new
-    @customer_profile = CustomerProfile.new
-    @customer_profile.user_id = params[:user_id]
+    @customer_profile = CustomerProfile.new(:user_id => params[:user_id])
   end
 
   def create
