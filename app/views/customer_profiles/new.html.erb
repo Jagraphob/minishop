@@ -1,6 +1,6 @@
 <% provide(:title, 'Sign Up') %>
 
-<%= render 'navbar' %>
+<%= render 'layouts/navbar_main', disabled_link: 'signup' %>
 
 <div class="signup-background">
   <div class="container">
@@ -24,18 +24,7 @@
       <div class="col-6">
         <div id="signup-form">
           <%= render 'layouts/flash' %>      
-          <%= form_with model: @customer_profile, :local => true do |f| %>
-            <div class="form-group">
-              <%= f.label :phone_number %>
-              <%= f.text_field :phone_number, class: 'form-control' %>
-            </div>
-            <div class="form-group">
-              <%= f.label :card_number %>
-              <%= f.text_field :card_number, class: 'form-control' %>
-            </div>
-            <%= f.hidden_field :user_id %>
-            <%= f.submit "Continue", class: "btn btn-success" %>
-          <% end %>
+          <%= render 'form', :customer_profile => @customer_profile%>
         </div>
       </div>
     </div>
