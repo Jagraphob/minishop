@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 2018_06_05_034420) do
     t.integer "user_id"
     t.string "phone_number", null: false
     t.string "card_number", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_customer_profiles_on_user_id"
   end
 
@@ -23,7 +25,10 @@ ActiveRecord::Schema.define(version: 2018_06_05_034420) do
     t.integer "customer_profile_id"
     t.integer "property_id"
     t.integer "status", default: 0
-    t.index ["customer_profile_id", "property_id"], name: "index_ownerships_on_customer_profile_id_and_property_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["customer_profile_id"], name: "index_ownerships_on_customer_profile_id"
+    t.index ["property_id"], name: "index_ownerships_on_property_id"
   end
 
   create_table "properties", force: :cascade do |t|
@@ -34,6 +39,8 @@ ActiveRecord::Schema.define(version: 2018_06_05_034420) do
     t.string "region", null: false
     t.string "postcode"
     t.string "icp_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "register_serials", force: :cascade do |t|
@@ -41,6 +48,8 @@ ActiveRecord::Schema.define(version: 2018_06_05_034420) do
     t.integer "meter_number"
     t.integer "register_number"
     t.integer "register_decimals"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["property_id"], name: "index_register_serials_on_property_id"
   end
 
@@ -48,8 +57,10 @@ ActiveRecord::Schema.define(version: 2018_06_05_034420) do
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "email", null: false
-    t.integer "role", default: 1
-    t.integer "status", default: 1
+    t.integer "role", default: 0
+    t.integer "status", default: 0
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email"
   end
 

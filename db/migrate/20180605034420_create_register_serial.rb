@@ -5,6 +5,7 @@ class CreateRegisterSerial < ActiveRecord::Migration[5.2]
       t.integer :meter_number
       t.integer :register_number
       t.integer :register_decimals
+      t.timestamps
     end
   end
 end

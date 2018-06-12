@@ -8,6 +8,7 @@ class CreateProperties < ActiveRecord::Migration[5.2]
         t.string :region, null: false
         t.string :postcode
         t.string :icp_number
+        t.timestamps
     end
   end
 end
