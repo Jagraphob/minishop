@@ -16,6 +16,16 @@
  @import "./customers";
  @import "./sessions";
 
+// disallow clicking on disabled navbar link
+ul.navbar-nav {
+  li.nav-item {
+    a.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+}
+
  a:hover, a:visited, a:link, a:active
  {
    color: inherit;
@@ -43,3 +53,4 @@
 .signup-form {
   margin-top: 30px
 }
+
