@@ -7,7 +7,7 @@ module SessionsHelper
     if user.admin?
       redirect_to admin_root_path
     else
-      redirect_to user.customer_profile
+      redirect_to user.customer
     end
   end
 end
