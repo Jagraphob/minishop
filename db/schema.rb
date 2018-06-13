@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_024610) do
+ActiveRecord::Schema.define(version: 2018_06_13_030707) do
 
   create_table "customer_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -29,12 +29,12 @@ ActiveRecord::Schema.define(version: 2018_06_13_024610) do
   end
 
   create_table "ownerships", force: :cascade do |t|
-    t.integer "customer_profile_id"
     t.integer "property_id"
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["customer_profile_id"], name: "index_ownerships_on_customer_profile_id"
+    t.integer "customer_id"
+    t.index ["customer_id"], name: "index_ownerships_on_customer_id"
     t.index ["property_id"], name: "index_ownerships_on_property_id"
   end
 
