@@ -1,25 +1,24 @@
-class CustomerController < ApplicationController
+class CustomersController < ApplicationController
   def show
   end
   
   def new
-    @customer_profile = CustomerProfile.new(:user_id => params[:user_id])
+    @customer = Customer.new
   end
 
   def create
-    @customer_profile = CustomerProfile.new(customer_profile_params)
-
-    if @customer_profile.save
-      redirect_to new_property_path(:customer_profile_id => @customer_profile.id)
+    @customer = Customer.new(customer_params)
+    if @customer.save
+      redirect_to new_customer_user_path(:customer_id => @customer.id)
     else
-      flash.now[:danger] = @customer_profile.errors.full_messages.join(", ")
-      render :action => 'new'
+      flash.now[:danger] = @customer.errors.full_messages.join(", ")
+      render 'new'
     end
   end
 
   private
 
-  def customer_profile_params
-    params.require(:customer_profile).permit(:phone_number, :card_number, :user_id)
+  def customer_params
+    params.require(:customer).permit(:first_name, :last_name, :phone_number, :card_number)
   end
 end

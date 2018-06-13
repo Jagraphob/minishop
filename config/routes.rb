@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :users, :customer_profiles, :properties
+  resources :customers do
+    resources :users
+  end
+
+  resources :properties
 
   namespace :admin do
-    resources :users, :customer_profiles, :properties
+    resources :users, :properties
     root 'home#index'
   end
 

@@ -9,13 +9,13 @@
       <div>
         <ul class="nav nav-tabs">
           <li class="nav-item">
-            <a class="nav-link active">Step 1: Account Information</a>
+            <a class="nav-link disabled">Step 1: Customer Information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Step 2: Customer Information</a>
+            <a class="nav-link active">Step 2: Account Information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled">Step 3: Properties Information</a>
+            <a class="nav-link disabled">Step 3: Confirmation &amp; Next Steps</a>
           </li>
         </ul>
       </div>
@@ -23,7 +23,7 @@
         <div class="col-6">
           <div class="signup-form">
             <%= render 'layouts/flash' %>      
-            <%= render 'form', user: @user %>
+            <%= render 'form' %>
           </div>
         </div>
       </div>

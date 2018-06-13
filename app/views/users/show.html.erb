@@ -1,0 +1,42 @@
+<% provide(:title, 'Sign Up') %>
+
+<%= render 'layouts/navbar_main', disabled_link: 'signup' %>
+
+<div class="signup-background">
+  <div class="container">
+    <div class="content-wrapper">
+      <h1>Join Minishop</h1>
+      <div>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link disabled">Step 1: Customer Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Step 2: Account Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active">Step 3: Confirmation &amp; Next Steps</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="signup-form">
+            <h2>Your Details</h2>
+            <p><strong>First name:</strong> <%= @customer.first_name %></p>
+            <p><strong>Last name:</strong> <%= @customer.last_name %></p>
+            <p><strong>Phone number:</strong> <%= @customer.phone_number %></p>
+            <p><strong>Card Number:</strong> <%= @customer.card_number %></p>
+            <p><strong>Email:</strong> <%= @customer.user.email %></p>
+            <h2>Next Steps</h2>
+            <ul>
+              <li>Login with your account details</li>
+              <li>In your account detail page, add property that you want us to supply electricity</li>
+            </ul>
+            <%= button_to "Proceed to Login", login_path, method: 'get', class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
