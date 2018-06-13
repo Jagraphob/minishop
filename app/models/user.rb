@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_one :customer_profile
+  belongs_to :customer
 
   enum role: [ :user, :admin]
   enum status: [ :inactive, :active ]

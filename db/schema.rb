@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_13_021539) do
+ActiveRecord::Schema.define(version: 2018_06_13_024610) do
 
   create_table "customer_profiles", force: :cascade do |t|
     t.integer "user_id"
@@ -61,13 +61,13 @@ ActiveRecord::Schema.define(version: 2018_06_13_021539) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "first_name", null: false
-    t.string "last_name", null: false
     t.string "email", null: false
     t.integer "role", default: 0
     t.integer "status", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "customer_id"
+    t.index ["customer_id"], name: "index_users_on_customer_id"
     t.index ["email"], name: "index_users_on_email"
   end
 

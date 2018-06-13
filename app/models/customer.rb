@@ -1,4 +1,6 @@
 class Customer < ApplicationRecord
+  has_one :user
+
   has_many :ownerships
   has_many :properties, :through => :ownerships
 
