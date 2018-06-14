@@ -1,12 +1,18 @@
-cp1:
+c1:
   id: 1
-  first_name: 'Toh',
+  first_name: 'Toh'
   last_name: 'Jan'
   phone_number: '0210577330'
   card_number: '4444666633330777'
-cp2:
+c2:
   id: 2
-  first_name: 'Bow',
+  first_name: 'Bow'
   last_name: 'Jan'
   phone_number: '0211234567'
   card_number: '5555222211110888'
+c3:
+  id: 3
+  first_name: 'Leon'
+  last_name: 'Jan'
+  phone_number: '0219203023'
+  card_number: '9999888833332222'

@@ -1,10 +1,10 @@
 o1:
   id: 1
-  customer_profile_id: 1
+  customer_id: 1
   property_id: 1
   status: 1
 o2:
   id: 2
-  customer_profile_id: 2
+  customer_id: 2
   property_id: 2
   status: 1

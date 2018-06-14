@@ -1,15 +1,14 @@
 user1:
   id: 1
-  first_name: 'Toh'
-  last_name: 'Jantakananuruk'
   email: 'toh@fluxfederation.com'
-  role: 0
+  role: 1
   status: 1
+  customer_id: 1
 
 user2:
   id: 2
-  first_name: 'Bow'
-  last_name: 'Jantakananuruk'
   email: 'bow@gmail.com'
   role: 0
   status: 1
+  customer_id: 2
+
