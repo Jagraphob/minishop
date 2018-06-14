@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
 
-  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+  rescue_from ActiveRecord::RecordNotFound, :with => :not_found
   
-  def render_404
+  def not_found
     render plain: 'Not found', :status => 404
   end
 end
