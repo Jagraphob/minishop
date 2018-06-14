@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
+  def show
+    @user = User.find_by(:customer_id => params[:customer_id], :id => params[:id]) or not_found
+  end
+
   def new
     @customer = Customer.find(params[:customer_id])
     @user = @customer.build_user
-  end
-  
-  def show
-    @customer = Customer.find(params[:customer_id])
   end
 
   def create
