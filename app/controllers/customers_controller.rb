@@ -1,5 +1,6 @@
 class CustomersController < ApplicationController
   def show
+    @customer = Customer.find(params[:id]) or render_404
   end
   
   def new
