@@ -3,11 +3,23 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
-  def redirect_after_sign_in(user)
+  def redirect_path_after_sign_in(user)
     if user.admin?
-      redirect_to admin_root_path
+      admin_root_path
     else
-      redirect_to user.customer
+      user.customer
     end
+  end
+
+  def current_user
+    User.find_by(:id => session[:user_id])
+  end
+
+  def logged_in?
+    !current_user.nil?
+  end
+
+  def log_out
+    session.delete(:user_id)
   end
 end
