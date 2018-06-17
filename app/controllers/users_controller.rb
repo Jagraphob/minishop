@@ -18,7 +18,7 @@ class UsersController < ApplicationController
       redirect_to customer_user_path(:customer_id => @customer.id, :id => @user.id)
     else
       flash.now[:danger] = @user.errors.full_messages.join(", ")
-       
+      render 'new'
     end
   end
 
