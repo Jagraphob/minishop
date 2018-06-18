@@ -18,7 +18,8 @@
 
 <div class="container">
   <div class="content-wrapper">
-    <h1>Customer</h1>
+    <%= render 'first_property' unless @customer.properties.any? %>
+    <%= render 'dashboard' %>
   </div>
 </div>
 
