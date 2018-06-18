@@ -9,6 +9,6 @@ class User < ApplicationRecord
     :uniqueness => true,
     :format => { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i }
     
-  validates :role, :presence => true, :numericality => true
-  validates :status, :presence => true, :numericality => true
+  validates :role, :presence => true
+  validates :status, :presence => true
 end

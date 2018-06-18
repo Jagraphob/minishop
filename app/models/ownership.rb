@@ -4,6 +4,6 @@ class Ownership < ApplicationRecord
 
   enum status: [:pending, :active, :archived]
 
-  validates :status, :presence => true, :numericality => true
+  validates :status, :presence => true
   validates :customer_id, :uniqueness => {:scope => :property_id}
 end
