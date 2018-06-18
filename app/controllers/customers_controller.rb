@@ -1,4 +1,6 @@
 class CustomersController < ApplicationController
+  before_action :logged_in_user, only: [:show]
+
   def show
     @customer = Customer.find(params[:id]) or render_404
   end
@@ -21,5 +23,12 @@ class CustomersController < ApplicationController
 
   def customer_params
     params.require(:customer).permit(:first_name, :last_name, :phone_number, :card_number)
+  end
+
+  def logged_in_user
+    unless logged_in?
+      flash[:danger] = "Please log in"
+      redirect_to login_url
+    end
   end
 end
