@@ -5,23 +5,7 @@
 <div class="container">
   <div class="content-wrapper">
     <h1>Join Minishop</h1>
-    <div>
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link disabled">Step 1: Customer Information</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Step 2: Account Information</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active">Step 3: Properties Information</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Step 4: Confirmation</a>
-        </li>
-      </ul>
-    </div>
-  </div>
+    <%= render 'layouts/signup_tabs', enabled_tab: 3 %>
   <div class="row signup-form">
     <div class="col-6">
       <h3>Add a property</h3>  
