@@ -1,7 +1,0 @@
-<%= form_with model: [@customer, @user], local: true do |f| %>
-  <div class="form-group">
-    <%= f.label :email %>
-    <%= f.email_field :email, class: 'form-control' %>
-  </div>
-  <%= f.submit "Continue", class: "btn btn-success" %>
-<% end %>

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  resources :customers
 
   namespace :signup do
     resources :customers, :only => [:show, :new, :create] do
