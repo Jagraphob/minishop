@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CustomersController, type: :controller do
+RSpec.describe Signup::CustomersController, type: :controller do
   fixtures :customers
 
   describe 'GET #show' do
@@ -47,7 +47,7 @@ RSpec.describe CustomersController, type: :controller do
       end
 
       it "redirect to that created game page" do
-        expect(response).to redirect_to(new_customer_user_path({ customer_id: Customer.last.id}))
+        expect(response).to redirect_to(new_signup_customer_user_path({ customer_id: Customer.last.id}))
       end
     end
   end
