@@ -3,10 +3,14 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :customers do
-    resources :users, :properties
-  end
 
+  namespace :signup do
+    resources :customers, :only => [:show, :new, :create] do
+      resources :users, :only => [:show, :new, :create] 
+      resources :properties, :only => [:new, :create]
+    end
+  end
+  
   namespace :admin do
     resources :users, :properties
     root 'home#index'
