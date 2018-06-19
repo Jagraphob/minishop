@@ -9,5 +9,5 @@ class Property < ApplicationRecord
   validates :suburb, :presence => true
   validates :city, :presence => true
   validates :region, :presence => true
-  validates :icp_number, :uniqueness => true
+  validates :icp_number, :uniqueness => {:message => "Invalid ICP Number, please check your ICP number or call us 0800-NO-PICKUP"}
 end

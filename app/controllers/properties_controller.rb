@@ -3,6 +3,7 @@ class PropertiesController < ApplicationController
   end
 
   def new
+    @customer = Customer.find(params[:customer_id])
   end
   
   def create
