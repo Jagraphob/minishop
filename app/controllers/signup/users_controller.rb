@@ -1,8 +1,4 @@
-class UsersController < ApplicationController
-  def show
-    @user = User.find_by(:customer_id => params[:customer_id], :id => params[:id]) or not_found
-  end
-
+class Signup::UsersController < ApplicationController
   def new
     @customer = Customer.find(params[:customer_id])
     @user = @customer.build_user
@@ -15,7 +11,7 @@ class UsersController < ApplicationController
     @user.status = :active
 
     if @user.save
-      redirect_to new_customer_property_path(:customer_id => @customer.id)
+      redirect_to new_signup_customer_property_path(:customer_id => @customer.id)
     else
       flash.now[:danger] = @user.errors.full_messages.join(", ")
       render 'new'

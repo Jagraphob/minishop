@@ -1,0 +1,43 @@
+<% provide(:title, 'Sign Up') %>
+
+<%= render 'layouts/navbar_main', disabled_link: 'signup' %>
+
+<div class="signup-background">
+  <div class="container">
+    <div class="content-wrapper">
+      <h1>Join Minishop</h1>
+      <div>
+        <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link disabled">Step 1: Customer Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Step 2: Account Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled">Step 3: Properties Information</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active">Step 4: Confirmation</a>
+          </li>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="signup-form">
+            <h2>Your Details</h2>
+            <p><strong>First name:</strong> <%= @customer.first_name %></p>
+            <p><strong>Last name:</strong> <%= @customer.last_name %></p>
+            <p><strong>Phone number:</strong> <%= @customer.phone_number %></p>
+            <p><strong>Card Number:</strong> <%= @customer.card_number %></p>
+            <p><strong>Email:</strong> <%= @customer.user.email %></p>
+            <h2>What's next ?</h2>
+            <p>Our admin will process your request and get back to you soon !</p>
+            <%= button_to "Proceed to Login", login_path, method: 'get', class: "btn btn-success" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
