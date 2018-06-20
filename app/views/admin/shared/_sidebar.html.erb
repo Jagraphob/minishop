@@ -1,0 +1,23 @@
+<nav class="col-md-2 d-none d-md-block bg-light sidebar">
+  <div class="sidebar-sticky">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <%= link_to admin_root_path, class: "nav-link #{active_link == 'dashboard' ? 'active' : nil}" do %>
+          <%= fa_icon "home"%> Dashboard
+        <% end %>
+        <%= link_to admin_ownerships_path, class: "nav-link #{active_link == 'requests' ? 'active' : nil}" do %>
+          <%= fa_icon "question"%> Requests
+        <% end %> 
+        <%= link_to admin_customers_path, class: "nav-link #{active_link == 'customers' ? 'active' : nil}" do %>
+          <%= fa_icon "users"%> Customers
+        <% end %>
+        <%= link_to admin_properties_path, class: "nav-link #{active_link == 'properties' ? 'active' : nil}" do %>
+          <%= fa_icon "building"%> Properties
+        <% end %>
+        <%= link_to admin_users_path, class: "nav-link #{active_link == 'users' ? 'active' : nil}" do %>
+          <%= fa_icon "user"%> User Accounts
+        <% end %>       
+      </li>
+    </ul>
+  </div>
+</nav>

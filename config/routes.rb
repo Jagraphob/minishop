@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   end
   
   namespace :admin do
-    resources :users, :properties
+    resources :customers
+    resources :properties
+    resources :ownerships
+    resources :users
     root 'home#index'
   end
 
