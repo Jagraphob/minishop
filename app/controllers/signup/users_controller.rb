@@ -1,4 +1,6 @@
 class Signup::UsersController < ApplicationController
+  layout "signup"
+
   def new
     @customer = Customer.find(params[:customer_id])
     @user = @customer.build_user

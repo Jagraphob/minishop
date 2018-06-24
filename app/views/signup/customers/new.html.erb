@@ -1,18 +1,10 @@
-<% provide(:title, 'Sign Up') %>
-
-<%= render 'layouts/navbar_main', disabled_link: 'signup' %>
-
-<div class="container">
-  <div class="content-wrapper">
-    <h1>Join Minishop</h1>
-    <%= render 'layouts/signup_tabs', enabled_tab: 1 %>
-  </div>
-  <div class="row">
-    <div class="col-6">
-      <div class="signup-form">
-        <%= render 'layouts/flash' %>      
-        <%= render 'form' %>
-      </div>
+<%= render 'layouts/signup_tabs', enabled_tab: 1 %>
+<div class="row">
+  <div class="col-6">
+    <div class="signup-form">
+      <%= render 'layouts/flash' %>      
+      <%= render 'form' %>
     </div>
   </div>
 </div>
+

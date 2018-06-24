@@ -1,4 +1,6 @@
 class Signup::CustomersController < ApplicationController
+  layout "signup"
+
   def show
     @customer = Customer.find(params[:id]) or render_404
   end

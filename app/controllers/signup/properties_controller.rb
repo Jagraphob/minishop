@@ -1,4 +1,6 @@
 class Signup::PropertiesController < ApplicationController
+  layout "signup"
+
   def new
     @customer = Customer.find(params[:customer_id])
     @property = @customer.properties.build
