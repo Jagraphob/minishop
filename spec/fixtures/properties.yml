@@ -16,3 +16,12 @@ p2:
   region: 'Wellington'
   postcode: '5011'
   icp_number: '748159263'
+p3:
+  id: 3
+  number: '10'
+  street_name: 'Lion Street'
+  suburb: 'Island Bay'
+  city: 'Wellington'
+  region: 'Wellington'
+  postcode: '5011'
+  icp_number: 'ICP988848309'

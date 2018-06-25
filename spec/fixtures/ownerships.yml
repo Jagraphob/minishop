@@ -8,3 +8,8 @@ o2:
   customer_id: 2
   property_id: 2
   status: 1
+o3:
+  id: 3
+  customer_id: 3
+  property_id: 3
+  status: 0
