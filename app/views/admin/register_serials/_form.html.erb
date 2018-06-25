@@ -1,0 +1,16 @@
+<%= form_with :model => [:admin, @ownership.property, @ownership.property.register_serials.new ], :local => true do |f| %>
+  <div class="form-group">
+    <%= f.label :meter_number %>
+    <%= f.text_field :meter_number, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :register_number %>
+    <%= f.text_field :register_number, class: 'form-control' %>
+  </div>
+    <div class="form-group">
+    <%= f.label :register_decimals %>
+    <%= f.text_field :register_decimals, class: 'form-control' %>
+  </div>
+  <%= f.submit "Save", class: "btn btn-success" %>
+<% end %>
+ 

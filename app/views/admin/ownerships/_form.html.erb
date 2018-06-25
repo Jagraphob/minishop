@@ -1,0 +1,7 @@
+<%= form_with :model => [:admin, @ownership], :local => true do |f| %>
+  <div class="form-group">
+    <%= f.select :status, :collection => Ownership.statuses.keys.to_a, class: "custom-select"%>
+  </div>
+  <%= f.submit "Save", class: "btn btn-success" %>
+<% end %>
+ 

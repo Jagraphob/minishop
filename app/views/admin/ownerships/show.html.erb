@@ -1,0 +1,25 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Signup Requests", admin_ownerships_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">Request # <%= @ownership.id %></li>
+  </ol>
+</nav>
+<div class="row">
+  <div class="col">
+    <h3><u>Customer Info</u></h3>
+    <%= render 'admin/customers/form' %>
+  </div>
+  <div class="col left-border">
+    <h3><u>Property Info</u></h3>
+    <%= render 'admin/properties/form' %>
+  </div>
+  <div class="col left-border">
+    <h3><u>Register Serials</u></h3>
+    <%= render 'admin/register_serials/form' %>
+    <hr>
+    <h3><u>Status</u></h3>
+    <%= render 'admin/ownerships/form' %>
+  </div>
+</div>
+<hr>
+
