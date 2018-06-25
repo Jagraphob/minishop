@@ -20,7 +20,7 @@ RSpec.describe Property, type: :model do
       expect(Property.new).to validate_presence_of(:region)
     end
     it 'validates the uniqueness of icp_number' do
-      expect(Property.new).to validate_uniqueness_of(:icp_number).case_insensitive
+      expect(Property.new).to validate_uniqueness_of(:icp_number).case_insensitive.with_message('Invalid ICP Number, please check your ICP number or call us 0800-NO-PICKUP')
     end
   end
 end
