@@ -31,7 +31,7 @@ RSpec.describe Signup::PropertiesController, type: :controller do
       end
 
       it 'a property is successfully created' do
-        expect(Property.count).to eq(3)
+        expect(Property.count).to eq(4)
       end
 
       it 'redirect to that created game page' do
