@@ -11,6 +11,8 @@ class Property < ApplicationRecord
   validates :region, :presence => true
   validates :icp_number, :uniqueness => {:message => "Invalid ICP Number, please check your ICP number or call us 0800-NO-PICKUP"}
 
+  accepts_nested_attributes_for :register_serials
+
   def icp_number=(val)
     write_attribute :icp_number, val.upcase
   end

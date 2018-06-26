@@ -27,7 +27,7 @@
         <td><%= item.property.suburb %></td>
         <td><%= item.property.city %></td>
         <td><%= item.property.icp_number %></td>
-        <td><%= button_to "View", admin_ownership_path(item), :method => 'get', :class => "btn btn-success btn-sm" %></td>
+        <td><%= button_to "Review", admin_ownership_path(item), :method => 'get', :class => "btn btn-success btn-sm" %></td>
       </tr>
     <% end %>
   </tbody>

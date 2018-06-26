@@ -14,11 +14,13 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :customers
-    resources :properties
+    resources :properties do
+      resources :register_serials, :only => [:create, :edit]
+    end
+
     resources :ownerships
     resources :users
     root 'home#index'
   end
-
   root 'home#index'
 end
