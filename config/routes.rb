@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :customers
     resources :properties do
-      resources :register_serials, :only => [:create, :edit]
+      resources :register_serials, :only => [:create, :edit, :destroy]
     end
 
     resources :ownerships

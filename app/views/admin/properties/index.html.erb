@@ -1,0 +1,34 @@
+<% provide(:active_link, 'properties') %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Properties</li>
+  </ol>
+</nav>
+<%= render 'status_toggle', :status => @status %>
+
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Number</th>
+      <th scope="col">Street Name</th>
+      <th scope="col">Suburb</th>
+      <th scope="col">City</th>
+      <th scope="col">ICP Number</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @properties.each do |property| %>
+        <td><%= property.id%></td>            
+        <td><%= property.number %></td>
+        <td><%= property.street_name %></td>
+        <td><%= property.suburb %></td>
+        <td><%= property.city %></td>
+        <td><%= property.icp_number %></td>
+        <td><%= link_to "View", admin_property_path(property), :role => 'button', :class => "btn btn-success btn-sm" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
