@@ -33,6 +33,10 @@ ul.navbar-nav {
    text-decoration: none;
  }
 
+ a[role=button] {
+   color: white
+ }
+
  .login-background {
   z-index: 9999;
   width: 100%;

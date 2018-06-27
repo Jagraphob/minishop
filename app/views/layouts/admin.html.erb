@@ -13,7 +13,7 @@
     <%= render 'admin/shared/navbar' %>
     <div class="container-fluid">
       <div class="row">
-        <%= render 'admin/shared/sidebar', :active_link => 'dashboard' %>
+        <%= render 'admin/shared/sidebar', :active_link => "#{yield :active_link}"  %>
         <div role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <%= yield %>
         </div>
