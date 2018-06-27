@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_14_012041) do
+ActiveRecord::Schema.define(version: 2018_06_27_022846) do
 
   create_table "customers", force: :cascade do |t|
     t.string "first_name", null: false
@@ -43,9 +43,9 @@ ActiveRecord::Schema.define(version: 2018_06_14_012041) do
 
   create_table "register_serials", force: :cascade do |t|
     t.integer "property_id"
-    t.integer "meter_number"
-    t.integer "register_number"
-    t.integer "register_decimals"
+    t.string "meter_number"
+    t.string "register_number"
+    t.string "register_decimals"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["property_id"], name: "index_register_serials_on_property_id"
