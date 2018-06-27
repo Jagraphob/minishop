@@ -5,9 +5,6 @@
         <%= link_to admin_root_path, class: "nav-link #{active_link == 'dashboard' ? 'active' : nil}" do %>
           <%= fa_icon "home"%> Dashboard
         <% end %>
-        <%= link_to admin_ownerships_path, class: "nav-link #{active_link == 'requests' ? 'active' : nil}" do %>
-          <%= fa_icon "question"%> Signup Requests
-        <% end %> 
         <%= link_to admin_customers_path, class: "nav-link #{active_link == 'customers' ? 'active' : nil}" do %>
           <%= fa_icon "users"%> Customers
         <% end %>
