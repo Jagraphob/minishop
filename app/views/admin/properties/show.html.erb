@@ -1,0 +1,81 @@
+<% provide(:active_link, 'properties') %>
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><%= link_to "Properties", admin_properties_path %></li>
+    <li class="breadcrumb-item active" aria-current="page">Propert # <%= @property.id %></li>
+  </ol>
+</nav>
+<%= render 'layouts/flash' %>
+<div class="row">
+  <div class="col">
+    <%= render 'form' %>
+  </div>
+  <div class="col left-border">
+    <table class="table table-hover">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Register Serial</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @property.register_serials %>
+      </tbody>
+    </table>
+    <%= form_with model: [:admin, @property, @property.register_serials.build], :local => true do |f| %>
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+            <%= f.label :meter_number %>
+            <%= f.text_field :meter_number, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <%= f.label :register_number %>
+            <%= f.text_field :register_number, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-group">
+            <%= f.label :register_decimals %>
+            <%= f.text_field :register_decimals, class: 'form-control' %>
+          </div>
+        </div>
+        <div class="col">
+          <%= f.submit "Add", class: "btn btn-success" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<hr>
+
+
+
+
+<h3>Customers</h3>
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @property.ownerships.each do |ownership| %>
+      <tr>
+        <td><%= ownership.customer.id%></td>            
+        <td><%= ownership.customer.first_name %></td>
+        <td><%= ownership.customer.last_name %></td>
+        <td><%= ownership.customer.user.email %></td>
+        <td><%= ownership.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

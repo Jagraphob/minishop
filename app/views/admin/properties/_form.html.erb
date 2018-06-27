@@ -1,4 +1,4 @@
-<%= form_with model: [:admin, @ownership.property], local: true do |f| %>
+<%= form_with model: [:admin, @property], local: true do |f| %>
     <div class="form-group">
       <%= f.label :number %>
       <%= f.text_field :number, class: 'form-control' %>
@@ -16,17 +16,17 @@
       <%= f.text_field :city, class: 'form-control' %>
     </div>
     <div class="form-group">
-      <%= f.label :region %>
-      <%= f.text_field :region, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :postcode %>
-      <%= f.text_field :postcode, class: 'form-control' %>
-    </div>
-    <div class="form-group">
-      <%= f.label :icp_number %>
-      <%= f.text_field :icp_number, class: 'form-control' %>
-    </div>
-    <%= f.submit "Save", class: "btn btn-success" %>
+        <%= f.label :region %>
+        <%= f.text_field :region, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :postcode %>
+        <%= f.text_field :postcode, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :icp_number %>
+        <%= f.text_field :icp_number, class: 'form-control' %>
+      </div>
+      <%= f.submit "Save", class: "btn btn-success" %>
 <% end %>
  
