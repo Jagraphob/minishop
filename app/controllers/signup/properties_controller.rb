@@ -8,7 +8,7 @@ class Signup::PropertiesController < ApplicationController
   
   def create
     @customer = Customer.find(params[:customer_id])
-    @property = @customer.properties.where(property_params).first_or_initialize
+    @property = Property.where(property_params).first_or_initialize
     
     if @property.save
       @ownership = Ownership.new(:customer_id => @customer.id, :property_id => @property.id, :status => :pending)
@@ -27,7 +27,7 @@ class Signup::PropertiesController < ApplicationController
       :number,
       :street_name,
       :suburb,
-      :city, 
+      :city,
       :region,
       :postcode,
       :icp_number
