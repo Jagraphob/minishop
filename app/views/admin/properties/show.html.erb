@@ -23,39 +23,11 @@
         <%= render @property.register_serials %>
       </tbody>
     </table>
-    <%= form_with model: [:admin, @property, @property.register_serials.build], :local => true do |f| %>
-    <div class="row">
-        <div class="col">
-            <div class="form-group">
-            <%= f.label :meter_number %>
-            <%= f.text_field :meter_number, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <%= f.label :register_number %>
-            <%= f.text_field :register_number, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="col">
-          <div class="form-group">
-            <%= f.label :register_decimals %>
-            <%= f.text_field :register_decimals, class: 'form-control' %>
-          </div>
-        </div>
-        <div class="col">
-          <%= f.submit "Add", class: "btn btn-success" %>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'admin/register_serials/form' %>
   </div>
 </div>
 <hr>
-
-
-
-
-<h3>Customers</h3>
+<h4>Customers</h4>
 <table class="table table-hover">
   <thead class="thead-dark">
     <tr>
@@ -64,7 +36,6 @@
       <th scope="col">Last Name</th>
       <th scope="col">Email</th>
       <th scope="col">Status</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
@@ -74,7 +45,7 @@
         <td><%= ownership.customer.first_name %></td>
         <td><%= ownership.customer.last_name %></td>
         <td><%= ownership.customer.user.email %></td>
-        <td><%= ownership.status %></td>
+        <td><%= render 'admin/ownerships/status_toggle_edit', :ownership => ownership %></td>
       </tr>
     <% end %>
   </tbody>
