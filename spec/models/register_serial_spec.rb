@@ -29,7 +29,10 @@ RSpec.describe RegisterSerial, type: :model do
       expect(RegisterSerial.new).to_not allow_values("$$", "7p", "9-").for(:register_number).with_message("must be numeric")
     end
     it 'validates the fomat of register_decimals to be numeric' do
-      expect(RegisterSerial.new).to_not allow_values("$", "k", ")").for(:register_number).with_message("must be numeric")
+      expect(RegisterSerial.new).to_not allow_values("$", "k", ")").for(:register_decimals).with_message("must be numeric")
+    end
+    it 'validates the uniqueness of combination of meter_number, register_number, register_decimals' do
+      expect(RegisterSerial.new).to validate_uniqueness_of(:register_decimals).scoped_to(:meter_number, :register_number).case_insensitive
     end
   end
 end
