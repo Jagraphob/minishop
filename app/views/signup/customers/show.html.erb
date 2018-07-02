@@ -1,64 +1,20 @@
-<% provide(:title, 'Sign Up') %>
-
-<%= render 'layouts/navbar_main', disabled_link: 'signup' %>
-
-<div class="signup-background">
-  <div class="container">
-    <div class="content-wrapper">
-      <h1>Join Minishop</h1>
-      <%= render 'layouts/signup_tabs', enabled_tab: 4 %>
-        <div class="signup-form">
-          <div class="row">
-            <div class="col-6">
-              <h3>Personal Details</h3>
-              <hr>
-              <div class="row">
-                <div class="col-4">
-                  <p><strong>First name:</strong></p>
-                  <p><strong>Last name:</strong></p>
-                  <p><strong>Phone number:</strong></p>
-                  <p><strong>Card number:</strong></p>
-                  <p><strong>Email:</strong></p>
-                </div>
-                <div class="col-8">
-                  <p><%= @customer.first_name %></p>
-                  <p><%= @customer.last_name %></p>
-                  <p><%= @customer.phone_number %></p>
-                  <p><%= @customer.card_number %></p>
-                  <p><%= @customer.user.email %></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-6 left-border">
-              <h3>Properties Details</h3>
-              <hr>
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th scope="col">Number</th>
-                      <th scope="col">Street</th>
-                      <th scope="col">City</th>
-                      <th socpe="col">ICP</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% @customer.properties.each do |property| %>
-                      <tr>
-                        <td><%= property.number %></td>
-                        <td><%= property.street_name %></td>
-                        <td><%= property.city %></td>
-                        <td><%= property.icp_number %></td>
-                      </tr>
-                    <% end %>
-                  </tbody>
-                </table>
-            </div>
-          </div>
-          <h2>What's next ?</h2>
-          <p>Our admin will process your request and get back to you soon !</p>
-          <%= link_to "Proceed to Login", login_path, :role => 'button', class: "btn btn-success" %>
-        </div>
+<%= render 'signup/shared/signup_tabs', :enabled_tab => 4 %>
+  <div class="signup-form">
+    <div class="row">
+      <div class="col-6">
+        <h3>Personal Details</h3>
+        <hr>
+        <%= render 'personal_detail', :customer => @customer %>
+      </div>
+      <div class="col-6 left-border">
+        <h3>Properties Details</h3>
+        <hr>
+        <%= render 'signup/properties/properties_table', :properties => @customer.properties %>
+      </div>
     </div>
+    <h2>What's next ?</h2>
+    <p>Our admin will process your request and get back to you soon !</p>
+    <%= link_to "Proceed to Login", login_path, :role => 'button', class: "btn btn-success" %>
   </div>
-</div>
+
 
