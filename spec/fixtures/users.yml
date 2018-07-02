@@ -3,7 +3,6 @@ user1:
   email: 'toh@fluxfederation.com'
   role: 1
   status: 1
-  customer_id: 1
 
 user2:
   id: 2
@@ -12,3 +11,9 @@ user2:
   status: 1
   customer_id: 2
 
+user3:
+  id: 3
+  email: 'leon@email.com'
+  role: 0
+  status: 1
+  customer_id: 3
