@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Minishop | <%= yield(:title) %></title>
+    <title>Minishop | Sign Up</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,9 +10,7 @@
   </head>
 
   <body>
-  <% provide(:title, 'Sign Up') %>
   <%= render 'layouts/navbar_main', disabled_link: 'signup' %>
-
   <div class="signup-background">
     <div class="container">
       <div class="content-wrapper">
@@ -21,6 +19,5 @@
       </div>
     </div>
   </div>
-
   </body>
 </html>
