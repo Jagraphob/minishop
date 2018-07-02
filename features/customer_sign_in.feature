@@ -6,6 +6,8 @@ Feature: Customer Login
   Scenario: Customer Sign in
   Given I am at Minishop home page
   When I click "Login" link
-  Then I should be redirected to "Log In" page
-
-   
+  Then I should be redirected to "Log In" main page
+  When I fill in "Email" with "bow@gmail.com"
+  And I fill in "Password" with "abcd"
+  And I click "Log In"
+  Then I should be redirected to "Customer" main page
