@@ -3,7 +3,7 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><%= link_to "Properties", admin_properties_path %></li>
-    <li class="breadcrumb-item active" aria-current="page">Propert # <%= @property.id %></li>
+    <li class="breadcrumb-item active" aria-current="page">Property # <%= @property.id %></li>
   </ol>
 </nav>
 <%= render 'layouts/flash' %>
@@ -12,10 +12,10 @@
     <%= render 'form' %>
   </div>
   <div class="col left-border">
-    <table class="table table-hover">
+    <table class="table table-hover" id="properties-table">
       <thead class="thead-dark">
         <tr>
-          <th scope="col">Register Serial</th>
+          <th scope="col">Register Serials</th>
           <th scope="col"></th>
         </tr>
       </thead>
