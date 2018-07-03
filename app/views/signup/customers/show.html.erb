@@ -1,20 +1,19 @@
-<%= render 'signup/shared/signup_tabs', :enabled_tab => 4 %>
-  <div class="signup-form">
-    <div class="row">
-      <div class="col-6">
-        <h3>Personal Details</h3>
-        <hr>
-        <%= render 'personal_detail', :customer => @customer %>
-      </div>
-      <div class="col-6 left-border">
-        <h3>Properties Details</h3>
-        <hr>
-        <%= render 'signup/properties/properties_table', :properties => @customer.properties %>
-      </div>
+<div class="signup-form">
+  <div class="row">
+    <div class="col-6">
+      <h3>Personal Details</h3>
+      <hr>
+      <%= render 'personal_detail', :customer => @customer %>
     </div>
-    <h2>What's next ?</h2>
-    <p>Our admin will process your request and get back to you soon !</p>
-    <%= link_to "Proceed to Login", login_path, :role => 'button', class: "btn btn-success" %>
+    <div class="col-6 left-border">
+      <h3>Properties Details</h3>
+      <hr>
+      <%= render 'signup/properties/properties_table', :properties => @customer.properties %>
+    </div>
   </div>
+  <h2>What's next ?</h2>
+  <p>Our admin will process your request and get back to you soon !</p>
+  <%= link_to "Proceed to Login", login_path, :role => 'button', class: "btn btn-success" %>
+</div>
 
 
