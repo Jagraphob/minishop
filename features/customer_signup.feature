@@ -1,4 +1,5 @@
 Feature: Customer Sign Up
+
   As a customer
   I want to be able sign up to Minishop
   So that I can ask for electricity supply at my property
