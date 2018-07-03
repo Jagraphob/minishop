@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   namespace :signup do
     resources :customers, :only => [:show, :new, :create] do
-      resources :users, :only => [:show, :new, :create] 
+      resources :users, :only => [:new, :create] 
       resources :properties, :only => [:new, :create]
     end
   end

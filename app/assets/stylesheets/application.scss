@@ -18,7 +18,7 @@
  @import "./sessions";
 
 // disallow clicking on disabled navbar link
-ul.navbar-nav {
+ul.navbar-nav, ul.nav-tabs {
   li.nav-item {
     a.disabled {
       cursor: not-allowed;
