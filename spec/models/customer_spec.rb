@@ -21,11 +21,10 @@ RSpec.describe Customer, type: :model do
       expect(Customer.new).to validate_length_of(:card_number).is_equal_to(16)
     end
     it 'validates the format of phone_number to be numeric' do
-      expect(Customer.new).to_not allow_values("021848u849", "021548$968").for(:phone_number).with_message('must be numeric')
+      expect(Customer.new).to_not allow_values("02184p8849", "0215489%68").for(:phone_number).with_message('is not a number')
     end
     it 'validates the format of card_number to be numeric' do
-      expect(Customer.new).to_not allow_values('abcd125836987456', "&588966814475558").for(:card_number).with_message('must be numeric')
+      expect(Customer.new).to_not allow_values('abcd125836987456', "&588966814475558").for(:card_number).with_message('is not a number')
     end
-
   end
 end
