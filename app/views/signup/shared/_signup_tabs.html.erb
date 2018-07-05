@@ -1,16 +1,16 @@
 <div>
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a href="#" class="nav-link <%= active_class('signup/customers', 'new', 'disabled') %>">Step 1: Customer Information</a>
+      <a href="#" class="nav-link <%= active_class_by_controller_action(controller: 'signup/customers', action: 'new', other_class: 'disabled') %>">Step 1: Customer Information</a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link <%= active_class('signup/users', 'new', 'disabled') %>">Step 2: Account Information</a>
+      <a href="#" class="nav-link <%= active_class_by_controller_action(controller: 'signup/users', action: 'new', other_class: 'disabled') %>">Step 2: Account Information</a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link <%= active_class('signup/properties', 'new', 'disabled') %>">Step 3: Properties Information</a>
+      <a href="#" class="nav-link <%= active_class_by_controller_action(controller: 'signup/properties', action: 'new', other_class: 'disabled') %>">Step 3: Properties Information</a>
     </li>
     <li class="nav-item">
-      <a href="#" class="nav-link <%= active_class('signup/customers', 'show', 'disabled') %>">Step 4: Summary</a>
+      <a href="#" class="nav-link <%= active_class_by_controller_action(controller: 'signup/customers', action: 'show', other_class: 'disabled') %>">Step 4: Summary</a>
     </li>
   </ul>
 </div>
