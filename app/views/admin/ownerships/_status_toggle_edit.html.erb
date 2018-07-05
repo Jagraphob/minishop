@@ -1,5 +1,20 @@
 <div class="btn-group">
-  <%= link_to "Active", admin_ownership_path(ownership, :ownership => {:status => :active}), :method => :patch, :role => 'button', :class => "btn #{ ownership.status == "active" ? "btn-success" : "btn-secondary" }"  %>
-  <%= link_to "Pending", admin_ownership_path(ownership, :ownership => {:status => :pending}), :method => :patch, :role => 'button', :class => "btn #{ ownership.status == "pending" ? "btn-warning" : "btn-secondary" }"  %>
-  <%= link_to "Archieved", admin_ownership_path(ownership, :ownership => {:status => :archived}), :method => :patch, :role => 'button', :class => "btn #{ ownership.status == "archived" ? "btn-danger" : "btn-secondary" }"  %>
+  <%= link_to "Active", 
+    admin_ownership_path(ownership, :ownership => {:status => :active}), 
+    :method => :patch, 
+    :role => 'button', 
+    :class => "btn #{ active_class_by_status(status: ownership.status, active_status: "active", active_class: "btn-success", other_class: "btn-secondary") }"  
+  %>
+  <%= link_to "Pending", 
+    admin_ownership_path(ownership, :ownership => {:status => :pending}), 
+    :method => :patch, 
+    :role => 'button', 
+    :class => "btn #{ active_class_by_status(status: ownership.status, active_status: "pending", active_class: "btn-warning", other_class: "btn-secondary") }"  
+  %>
+  <%= link_to "Archieved", 
+    admin_ownership_path(ownership, :ownership => {:status => :archived}), 
+    :method => :patch, 
+    :role => 'button', 
+    :class => "btn #{ active_class_by_status(status: ownership.status, active_status: "archived", active_class: "btn-danger", other_class: "btn-secondary") }"  
+  %>
 </div>

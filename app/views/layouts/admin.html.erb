@@ -24,16 +24,16 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <%= link_to admin_root_path, class: "nav-link #{active_class('admin/home', 'index', '')}" do %>
+                <%= link_to admin_root_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/home')}" do %>
                   <%= fa_icon "home"%> Dashboard
                 <% end %>
-                <%= link_to admin_customers_path, class: "nav-link #{active_class('admin/customers', 'index', '')}" do %>
+                <%= link_to admin_customers_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/customers')}" do %>
                   <%= fa_icon "users"%> Customers
                 <% end %>
-                <%= link_to admin_properties_path, class: "nav-link #{active_class('admin/properties', 'index', '')}" do %>
+                <%= link_to admin_properties_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/properties')}" do %>
                   <%= fa_icon "building"%> Properties
                 <% end %>
-                <%= link_to admin_users_path, class: "nav-link #{active_class('admin/users', 'index', '')}" do %>
+                <%= link_to admin_users_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/users')}" do %>
                   <%= fa_icon "user"%> User Accounts
                 <% end %>       
               </li>
