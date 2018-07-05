@@ -1,0 +1,22 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% ownerships.each do |ownership| %>
+      <tr>
+        <td><%= ownership.customer.id%></td>            
+        <td><%= ownership.customer.first_name %></td>
+        <td><%= ownership.customer.last_name %></td>
+        <td><%= ownership.customer.user.email %></td>
+        <td><%= render 'admin/ownerships/status_toggle_edit', :ownership => ownership %></td>
+      </tr>
+      <% end %>
+  </tbody>
+</table>

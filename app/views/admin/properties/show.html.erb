@@ -12,41 +12,10 @@
     <%= render 'form' %>
   </div>
   <div class="col left-border">
-    <table class="table table-hover" id="properties-table">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Register Serials</th>
-          <th scope="col"></th>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render @property.register_serials %>
-      </tbody>
-    </table>
+    <%= render 'admin/register_serials/register_serials_table', :register_serials => @property.register_serials %>
     <%= render 'admin/register_serials/form' %>
   </div>
 </div>
 <hr>
 <h4>Customers</h4>
-<table class="table table-hover">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">First Name</th>
-      <th scope="col">Last Name</th>
-      <th scope="col">Email</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @property.ownerships.each do |ownership| %>
-      <tr>
-        <td><%= ownership.customer.id%></td>            
-        <td><%= ownership.customer.first_name %></td>
-        <td><%= ownership.customer.last_name %></td>
-        <td><%= ownership.customer.user.email %></td>
-        <td><%= render 'admin/ownerships/status_toggle_edit', :ownership => ownership %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'admin/customers/customers_by_ownerships_table', :ownerships => @property.ownerships %>
