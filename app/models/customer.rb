@@ -6,6 +6,6 @@ class Customer < ApplicationRecord
 
   validates :first_name, :presence => true
   validates :last_name, :presence => true
-  validates :phone_number, :presence => true, :length => { in: 8..10 }, :format => { :with => /\A[+-]?\d+\z/, :message => "must be numeric" }
-  validates :card_number, :presence => true, :length => { :is => 16 }, :format => { :with => /\A[+-]?\d+\z/, :message => "must be numeric" }
+  validates :phone_number, :presence => true, :length => { in: 8..10 }, :numericality => { :greater_than => 0}
+  validates :card_number, :presence => true, :length => { :is => 16 }, :numericality => { :greater_than => 0}
 end
