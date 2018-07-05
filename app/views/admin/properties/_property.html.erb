@@ -1,0 +1,9 @@
+<tr>
+  <td><%= property.id%></td>            
+  <td><%= property.number %></td>
+  <td><%= property.street_name %></td>
+  <td><%= property.suburb %></td>
+  <td><%= property.city %></td>
+  <td><%= property.icp_number %></td>
+  <td><%= link_to "View", admin_property_path(property), :role => 'button', :class => "btn btn-success btn-sm" %></td>
+</tr>

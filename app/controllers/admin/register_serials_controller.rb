@@ -5,7 +5,7 @@ class Admin::RegisterSerialsController < ApplicationController
     @property = Property.find(params[:property_id])
     @register_serial = @property.register_serials.create(register_serial_params)
 
-    flash[:error] = @register_serial.errors.full_messages if @register_serial.errors
+    flash[:danger] = @register_serial.errors.full_messages if @register_serial.errors.present?
     redirect_to admin_property_path(@property)
   end
 

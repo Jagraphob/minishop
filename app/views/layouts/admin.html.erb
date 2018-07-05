@@ -10,10 +10,36 @@
   </head>
 
   <body>
-    <%= render 'admin/shared/navbar' %>
+    <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand-admin col-sm-3 col-md-2 mr-0" href="#"><%= fa_icon "bolt"%> Minishop</a>
+      <ul class="navbar-nav px-3">
+        <li class="nav-item text-nowrap">
+          <%= link_to "Log out", logout_path, method: 'delete', class: "nav-link" %>
+        </li>
+      </ul>
+    </nav>
     <div class="container-fluid">
       <div class="row">
-        <%= render 'admin/shared/sidebar', :active_link => "#{yield :active_link}"  %>
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <%= link_to admin_root_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/home')}" do %>
+                  <%= fa_icon "home"%> Dashboard
+                <% end %>
+                <%= link_to admin_customers_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/customers')}" do %>
+                  <%= fa_icon "users"%> Customers
+                <% end %>
+                <%= link_to admin_properties_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/properties')}" do %>
+                  <%= fa_icon "building"%> Properties
+                <% end %>
+                <%= link_to admin_users_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/users')}" do %>
+                  <%= fa_icon "user"%> User Accounts
+                <% end %>       
+              </li>
+            </ul>
+          </div>
+        </nav>
         <div role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
           <%= yield %>
         </div>

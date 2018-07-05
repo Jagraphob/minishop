@@ -3,7 +3,7 @@ class Admin::PropertiesController < ApplicationController
   
   def index
     if params.has_key? :status
-      @properties = Property.joins(:ownerships).where('ownerships.status == ?', params[:status])
+      @properties = get_properties_by_ownership_status(params[:status])
     else
       @properties = Property.all
     end
@@ -28,5 +28,9 @@ class Admin::PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:number, :street_name, :suburb, :city, :region, :postcode, :icp_number)
+  end
+
+  def get_properties_by_ownership_status(status)
+    Property.joins(:ownerships).where('ownerships.status == ?', status)
   end
 end

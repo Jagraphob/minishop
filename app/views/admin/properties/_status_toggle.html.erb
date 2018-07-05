@@ -1,5 +1,16 @@
 <div class="btn-group" role="group">
-  <%= link_to "All", admin_properties_path, :class => "btn #{ status == nil ? "btn-primary" : "btn-secondary" }", :role => "button"  %>
-  <%= link_to "Active", admin_properties_path(:status => 1), :class => "btn #{ status == "1" ? "btn-success" : "btn-secondary" }", :role => "button"  %>
-  <%= link_to "Pending", admin_properties_path(:status => 0), :class => "btn #{ status == "0" ? "btn-warning" : "btn-secondary" }", :role => "button"  %>
+  <%= link_to "All", 
+    admin_properties_path, 
+    :class => "btn #{ active_class_by_status(status: status, active_status: nil, active_class: "btn-primary", other_class: "btn-secondary") }", 
+    :role => "button"  
+  %>
+  <%= link_to "Active", 
+    admin_properties_path(:status => 1), 
+    :class => "btn #{ active_class_by_status(status: status, active_status: "1", active_class: "btn-success", other_class: "btn-secondary") }", 
+    :role => "button"  
+  %>
+  <%= link_to "Pending", 
+    admin_properties_path(:status => 0), 
+    :class => "btn #{ active_class_by_status(status: status, active_status: "0", active_class: "btn-warning", other_class: "btn-secondary") }", 
+    :role => "button"  %>
 </div>
