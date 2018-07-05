@@ -3,6 +3,7 @@ class Admin::OwnershipsController < ApplicationController
 
   def update
     session[:return_to] ||= request.referer
+    
     @ownership = Ownership.find(params[:id])
     if @ownership.update(ownership_params)
       redirect_to session.delete(:return_to)
