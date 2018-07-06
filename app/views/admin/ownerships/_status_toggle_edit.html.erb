@@ -11,7 +11,7 @@
     :role => 'button', 
     :class => "btn #{ active_class_by_status(status: ownership.status, active_status: "pending", active_class: "btn-warning", other_class: "btn-secondary") }"  
   %>
-  <%= link_to "Archieved", 
+  <%= link_to "Archived", 
     admin_ownership_path(ownership, :ownership => {:status => :archived}), 
     :method => :patch, 
     :role => 'button', 
