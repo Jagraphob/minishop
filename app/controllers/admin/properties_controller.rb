@@ -31,6 +31,6 @@ class Admin::PropertiesController < ApplicationController
   end
 
   def get_properties_by_ownership_status(status)
-    Property.joins(:ownerships).where('ownerships.status == ?', status)
+    Property.joins(:ownerships).where(:ownerships => { :status => status })
   end
 end
