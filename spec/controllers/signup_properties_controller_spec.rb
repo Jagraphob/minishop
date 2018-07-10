@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Signup::PropertiesController, type: :controller do
-  fixtures :properties
+  fixtures :properties, :meters
 
   describe "GET #new" do
     it "returns http success" do
@@ -32,6 +32,10 @@ RSpec.describe Signup::PropertiesController, type: :controller do
 
       it 'a property is successfully created' do
         expect(Property.count).to eq(4)
+      end
+
+      it 'a meter that belongs to the property is created' do
+        expect(Meter.last.property_id).to eq(Property.last.id)
       end
 
       it 'redirect to that created game page' do
