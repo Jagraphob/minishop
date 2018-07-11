@@ -1,0 +1,15 @@
+<%= form_with :model => [:admin, @property, @property.meter], :local => true do |f| %>
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text input-group-text-label">Decimals</span>
+        <%= f.submit "-", class: "btn btn-danger" %>
+      </div>
+      <%= f.text_field :decimal_position, :class => 'form-control' %>
+      <div class="input-group-append">
+        <%= f.submit "+", class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+ 
