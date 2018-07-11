@@ -22,7 +22,7 @@ RSpec.describe Signup::UsersController, type: :controller do
       end
 
       it 'a user is successfully created' do
-        expect(User.count).to eq(4)
+        expect(User.count).to eq(5)
       end
 
       it "redirect to confirmation & next steps page for that customer & user" do
