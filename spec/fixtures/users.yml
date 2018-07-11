@@ -17,3 +17,10 @@ user3:
   role: 0
   status: 1
   customer_id: 3
+
+user4:
+  id: 4
+  email: 'toh@email.com'
+  role: 0
+  status: 1
+  customer_id: 1
