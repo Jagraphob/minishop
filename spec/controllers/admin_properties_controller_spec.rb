@@ -16,14 +16,14 @@ RSpec.describe Admin::PropertiesController, type: :controller do
   end
 
   describe 'GET #show' do
-    context 'the customer exists' do
+    context 'the property exists' do
       it 'return http success' do
         get :show, params: { id: Property.first.id}
         expect(response).to have_http_status(200)
       end
     end
 
-    context "the user doesn't exist" do
+    context "the property doesn't exist" do
       it "return http response status 404" do
         get :show, params: { id: Property.last.id + 1 }
         expect(response.status).to eq(404)
@@ -32,8 +32,7 @@ RSpec.describe Admin::PropertiesController, type: :controller do
   end
 
   describe 'PATCH #update' do
-    context 'update property icp number' do
-      
+    context 'update property icp number' do      
       before do
         patch :update, :params => {
           :id => 3,
