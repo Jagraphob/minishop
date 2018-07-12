@@ -18,6 +18,7 @@ Rails.application.routes.draw do
     resources :ownerships, :only => [:update]
     resources :properties do
       resources :register_serials, :only => [:create, :edit, :destroy]
+      resources :meters, :only => [:update]
     end
 
     root 'home#index'

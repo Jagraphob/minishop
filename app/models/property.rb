@@ -1,5 +1,6 @@
 class Property < ApplicationRecord
   has_many :register_serials, :dependent => :destroy
+  has_one :meter, :dependent => :destroy
 
   has_many :ownerships
   has_many :customers, :through => :ownerships

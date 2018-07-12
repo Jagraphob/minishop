@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject(:user) { User.create(:email => email, :role => role, :status => status)}
 
-  let(:email) { 'toh@email.com' }
+  let(:email) { 'john.doe@email.com' }
   let(:role) { :user }
   let(:status) { :active}
 

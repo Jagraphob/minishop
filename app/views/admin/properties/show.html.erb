@@ -6,16 +6,28 @@
     <li class="breadcrumb-item active" aria-current="page">Property # <%= @property.id %></li>
   </ol>
 </nav>
+<hr>
 <%= render 'layouts/flash' %>
 <div class="row">
   <div class="col">
+    <h4 class="stripe-heading">Details</h4>
     <%= render 'form' %>
   </div>
   <div class="col left-border">
+    <h4 class="stripe-heading">Meter Reading</h4>
+    <div class="row">
+      <div class="col-8">
+        <%= render 'admin/meters/reading_form' %>
+      </div>
+      <div class="col-4">
+        <%= render 'admin/meters/decimal_position_form' %>
+      </div>
+    </div>
+    <h4 class="stripe-heading">Register Serials</h4>
     <%= render 'admin/register_serials/register_serials_table', :register_serials => @property.register_serials %>
     <%= render 'admin/register_serials/form' %>
   </div>
 </div>
 <hr>
-<h4>Customers</h4>
+<h4 class="stripe-heading">Customers</h4>
 <%= render 'admin/customers/customers_by_ownerships_table', :ownerships => @property.ownerships %>
