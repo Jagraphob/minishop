@@ -6,7 +6,7 @@ RSpec.describe SessionsHelper, type: :helper do
   describe '#log_in' do
     it 'login user to the session' do
       log_in(User.last)
-      expect(session[:user_id]).to eq(4)
+      expect(session[:user_id]).to eq(User.last.id)
     end
   end
 
