@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :customers
+  resources :customers do
+    resources :properties, :only => [:show] do 
+      resources :meters, :only => [:update]
+    end
+  end
 
   namespace :signup do
     resources :customers, :only => [:show, :new, :create] do
@@ -13,10 +17,10 @@ Rails.application.routes.draw do
   end
   
   namespace :admin do
-    resources :customers
-    resources :users
+    resources :customers, :only => [:index]
+    resources :users, :only => [:index]
     resources :ownerships, :only => [:update]
-    resources :properties do
+    resources :properties, :only => [:index, :show, :update] do
       resources :register_serials, :only => [:create, :edit, :destroy]
       resources :meters, :only => [:update]
     end
