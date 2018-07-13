@@ -1,25 +1,26 @@
-<% provide(:title, 'Customer') %>
+<% provide(:title, 'Home') %>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <%= fa_icon "bolt"%> Minishop
-    </a>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <%= link_to "Home", customer_path(@customer), class: "nav-link disabled"%>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Logout", logout_path, method: 'delete', class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
 </nav>
-
-<div class="container">
-  <div class="content-wrapper">
-    <%= render 'first_property' unless @customer.properties.any? %>
-    <%= render 'dashboard' %>
-  </div>
-</div>
-
+<h4 class="stripe-heading">Your Properties</h4>
+<table class="table table-hover">
+  <thead>
+    <th scope="col">Address</th>
+    <th scope="col">Meter Reading</th>
+    <th scope="col"></th>
+  </thead>
+  <tbody>
+    <% @customer.properties.each do |property| %>
+      <% if property.ownerships.first.status == 'active' %>
+        <tr>
+          <th><%= "#{property.number} #{property.street_name}, #{property.suburb}, #{property.city}"%></th>
+          <th><%= "#{property.meter.reading} kWh" %></th>
+          <th><%= link_to "Manage", customer_property_path(:customer_id => @customer.id, :id => property.id),:role => 'button', :class => "btn btn-success btn-sm"  %></th>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
