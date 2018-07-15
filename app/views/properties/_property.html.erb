@@ -1,0 +1,5 @@
+<tr>
+  <th><%= full_address(property) %></th>
+  <th><%= "#{meter_display(property.meter)} kWh" %></th>
+  <th><%= link_to "Manage", customer_property_path(:customer_id => customer_id, :id => property.id),:role => 'button', :class => "btn btn-success btn-sm"  %></th>
+</tr>

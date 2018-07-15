@@ -5,11 +5,11 @@ m1:
   property_id: 1
 m2:
   id: 2
-  reading: 100
+  reading: 100.123
   decimal_position: 3
   property_id: 2
 m3:
   id: 3
-  reading: 1500
+  reading: 1500.12
   decimal_position: 4
   property_id: 3

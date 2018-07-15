@@ -1,25 +1,10 @@
-<% provide(:title, 'Customer') %>
+<% provide(:title, 'Home') %>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container">
-    <a class="navbar-brand" href="/">
-      <%= fa_icon "bolt"%> Minishop
-    </a>
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <%= link_to "Home", customer_path(@customer), class: "nav-link disabled"%>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Logout", logout_path, method: 'delete', class: "nav-link" %>
-      </li>
-    </ul>
-  </div>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">Home</li>
+  </ol>
 </nav>
-
-<div class="container">
-  <div class="content-wrapper">
-    <%= render 'first_property' unless @customer.properties.any? %>
-    <%= render 'dashboard' %>
-  </div>
-</div>
+<h4 class="stripe-heading">Your Properties</h4>
+<%= render 'properties/customers_properties_table', :customer_id => @customer.id, :properties => @customer.properties  %>
 

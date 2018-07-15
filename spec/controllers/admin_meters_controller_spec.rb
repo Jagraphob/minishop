@@ -2,12 +2,12 @@ require 'rails_helper'
 
 RSpec.describe Admin::MetersController, type: :controller do
   describe 'PATCH #update' do
-    context 'update meter reading to 100.015 kWh' do
+    context 'update meter reading to 1235.015 kWh' do
       before do
         patch :update, :params => { :id => 1, :property_id => 1, :meter => {:reading => 1235.015} }
       end
 
-      it 'the meter reading is updated to 100.015' do        
+      it 'the meter reading is updated to 1235.015' do        
         expect(Meter.find(1).reading).to eq(1235.015)
       end
     end

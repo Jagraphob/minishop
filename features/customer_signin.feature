@@ -10,4 +10,4 @@ Feature: Customer Login
   When I fill in "Email" with "bow@gmail.com"
   And I fill in "Password" with "abcd"
   And I click "Log In"
-  Then I should be redirected to "Customer" main page
+  Then I should be redirected to "Home" main page

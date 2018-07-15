@@ -1,0 +1,13 @@
+<%= form_with :model => [@customer, @property, @property.meter], :local => true do |f| %>
+  <div class="form-group">
+    <%= f.label :reading %>
+    <div class="input-group">
+      <%= f.text_field :reading, :class => 'form-control', :value => meter_display(f.object) %>
+      <div class="input-group-append">
+        <span class="input-group-text input-group-text-unit">kWh</span>
+        <%= f.submit "Save", class: "btn btn-success" %>
+      </div>
+    </div>
+  </div>
+<% end %>
+ 
