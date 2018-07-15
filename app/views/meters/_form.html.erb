@@ -2,7 +2,7 @@
   <div class="form-group">
     <%= f.label :reading %>
     <div class="input-group">
-      <%= f.text_field :reading, :class => 'form-control', :value => number_with_precision(f.object.reading, :precision => f.object.decimal_position) %>
+      <%= f.text_field :reading, :class => 'form-control', :value => meter_display(f.object) %>
       <div class="input-group-append">
         <span class="input-group-text input-group-text-unit">kWh</span>
         <%= f.submit "Save", class: "btn btn-success" %>

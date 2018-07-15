@@ -6,21 +6,5 @@
   </ol>
 </nav>
 <h4 class="stripe-heading">Your Properties</h4>
-<table class="table table-hover">
-  <thead>
-    <th scope="col">Address</th>
-    <th scope="col">Meter Reading</th>
-    <th scope="col"></th>
-  </thead>
-  <tbody>
-    <% @customer.properties.each do |property| %>
-      <% if property.ownerships.first.status == 'active' %>
-        <tr>
-          <th><%= "#{property.number} #{property.street_name}, #{property.suburb}, #{property.city}"%></th>
-          <th><%= "#{property.meter.reading} kWh" %></th>
-          <th><%= link_to "Manage", customer_property_path(:customer_id => @customer.id, :id => property.id),:role => 'button', :class => "btn btn-success btn-sm"  %></th>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
+<%= render 'properties/customers_properties_table', :customer_id => @customer.id, :properties => @customer.properties  %>
+

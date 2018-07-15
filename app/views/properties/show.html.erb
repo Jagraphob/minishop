@@ -10,7 +10,7 @@
 <div class="row">
   <div class="col">
     <h4 class="stripe-heading">Property Detail</h4>
-    <p><strong>Address:</strong>  <%= "#{@property.number} #{@property.street_name}, #{@property.suburb}, #{@property.city}, #{@property.postcode}" %></p>
+    <p><strong>Address:</strong>  <%= full_address(@property) %></p>
     <p><strong>ICP:</strong>  <%= @property.icp_number %></p>
   </div>
   <div class="col left-border">
