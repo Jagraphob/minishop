@@ -25,3 +25,12 @@ p3:
   region: 'Wellington'
   postcode: '5011'
   icp_number: 'ICP988848309'
+p4:
+  id: 4
+  number: '100'
+  street_name: 'New Street'
+  suburb: 'Newtown'
+  city: 'Wellington'
+  region: 'Wellington'
+  postcode: '6023'
+  icp_number: 'ICPir992003'

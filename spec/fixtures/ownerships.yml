@@ -13,3 +13,8 @@ o3:
   customer_id: 3
   property_id: 3
   status: 0
+o4:
+  id: 4
+  customer_id: 3
+  property_id: 4
+  status: 1

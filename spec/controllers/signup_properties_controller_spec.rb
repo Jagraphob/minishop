@@ -31,7 +31,7 @@ RSpec.describe Signup::PropertiesController, type: :controller do
       end
 
       it 'a property is successfully created' do
-        expect(Property.count).to eq(4)
+        expect(Property.last.icp_number).to eq('857159263')
       end
 
       it 'a meter that belongs to the property is created' do

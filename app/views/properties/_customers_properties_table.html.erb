@@ -1,0 +1,10 @@
+<table class="table table-hover">
+  <thead>
+    <th scope="col">Address</th>
+    <th scope="col">Meter Reading</th>
+    <th scope="col"></th>
+  </thead>
+  <tbody>
+      <%= render filter_by_ownership_status(properties, 'active'), :customer_id => customer_id %>
+  </tbody>
+</table>
