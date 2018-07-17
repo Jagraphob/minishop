@@ -12,7 +12,7 @@ class Signup::CustomersController < ApplicationController
   def create
     @customer = Customer.new(customer_params)
     if @customer.save
-      redirect_to new_signup_customer_user_path(:customer_id => @customer.id)
+      redirect_to new_signup_customer_user_path(@customer)
     else
       flash.now[:danger] = @customer.errors.full_messages.join(", ")
       render 'new'
