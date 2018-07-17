@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe PropertiesHelper, type: :helper do
-  fixtures :properties
+  fixtures :customers, :properties
+
+  let(:customer_3) { customers(:c3) }
+  let(:property_4) { properties(:p4) }
 
   describe '#full_address' do
     it 'return full address concat in one line' do
@@ -13,7 +16,7 @@ RSpec.describe PropertiesHelper, type: :helper do
     context 'customer 3 by active status'
 
     it 'return only the propety:id:3' do
-      expect(filter_by_ownership_status(Customer.find(3).properties, 'active').first).to eq(Property.find(4))
+      expect(filter_by_ownership_status(customer_3.properties, 'active').first).to eq(property_4)
     end
   end
 end

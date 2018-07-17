@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe Meter, type: :model do
   fixtures :meters
 
+  let(:meter_1) { meters(:m1) }
+
   describe 'validations' do
     it 'validates the presence of reading' do
       expect(Meter.new).to validate_presence_of(:reading)
@@ -28,9 +30,9 @@ RSpec.describe Meter, type: :model do
       expect(Meter.new).to_not allow_values(1.4, 2.56, 4.01).for(:decimal_position)
     end
     it 'validates reading cannot be decreased' do
-      meter = Meter.first
-      meter.update(:reading => 1233)
-      expect(meter).to_not be_valid
+      meter_1.update(:reading => 1233)
+      expect(meter_1).to_not be_valid
+      expect(meter_1.errors.messages[:reading].join('')).to eq('value cannot be decreased')
     end
   end
 end

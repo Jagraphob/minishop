@@ -3,6 +3,9 @@ require 'rails_helper'
 RSpec.describe Admin::PropertiesController, type: :controller do
   fixtures :properties
 
+  let(:first_property) { properties(:p1) }
+  let(:property_3) { properties(:p3) }
+
   describe "GET #index" do
     it "returns http success" do
       get :index
@@ -18,14 +21,14 @@ RSpec.describe Admin::PropertiesController, type: :controller do
   describe 'GET #show' do
     context 'the property exists' do
       it 'return http success' do
-        get :show, params: { id: Property.first.id}
+        get :show, params: { id: first_property.to_param }
         expect(response).to have_http_status(200)
       end
     end
 
     context "the property doesn't exist" do
       it "return http response status 404" do
-        get :show, params: { id: Property.last.id + 1 }
+        get :show, params: { id: (Property.last.id + 1).to_s }
         expect(response.status).to eq(404)
       end
     end
@@ -43,7 +46,7 @@ RSpec.describe Admin::PropertiesController, type: :controller do
       end
 
       it 'the icp_number gets updated' do
-        expect(Property.find(3).icp_number).to eq('ICP333333')
+        expect(property_3.icp_number).to eq('ICP333333')
       end
     end
   end
