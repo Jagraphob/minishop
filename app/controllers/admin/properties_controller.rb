@@ -3,7 +3,7 @@ class Admin::PropertiesController < ApplicationController
   
   def index
     if params.has_key? :status
-      @properties = get_properties_by_ownership_status(params[:status])
+      @properties = PropertyService.get_properties_by_ownership_status(params[:status])
     else
       @properties = Property.all
     end
@@ -17,9 +17,10 @@ class Admin::PropertiesController < ApplicationController
   def update
     @property = Property.find(params[:id])
     if @property.update(property_params)
+      flash[:success] = 'Property detail update successful'
       redirect_to admin_property_path(@property)
     else
-      flash[:error] = @property.errors.full_messages if @property.errors
+      flash[:error] = @property.errors.full_messages.join(", ")
       render 'show'
     end
   end
@@ -28,9 +29,5 @@ class Admin::PropertiesController < ApplicationController
 
   def property_params
     params.require(:property).permit(:number, :street_name, :suburb, :city, :region, :postcode, :icp_number)
-  end
-
-  def get_properties_by_ownership_status(status)
-    Property.joins(:ownerships).where(:ownerships => { :status => status })
   end
 end
