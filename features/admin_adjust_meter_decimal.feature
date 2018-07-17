@@ -12,6 +12,7 @@ Feature: Admin adjusting meter decimal places
    And I should see custom input group field "Decimals" as "2"
    When I click "+"
    Then I should see custom input group field "Decimals" as "3"
+   And I should see content "Meter update successful"
 
   Scenario: Admin decrease the decimal places of a meter.
    Given I am logged in as "admin"
@@ -21,3 +22,4 @@ Feature: Admin adjusting meter decimal places
    And I should see custom input group field "Decimals" as "2"
    When I click "-"
    Then I should see custom input group field "Decimals" as "1"
+   And I should see content "Meter update successful"

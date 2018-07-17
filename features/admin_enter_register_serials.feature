@@ -17,4 +17,5 @@ Feature: Admin enter register serials on a new signed up property
   And I fill in "Register decimals" with "0"
   And I click "Add"
   Then I should see 123:02[0] as a row the Register Serial table
+  And I should see content "Register Serial create succesful"
   
