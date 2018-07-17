@@ -13,7 +13,7 @@ class Signup::UsersController < ApplicationController
     @user.status = :active
 
     if @user.save
-      redirect_to new_signup_customer_property_path(:customer_id => @customer.id)
+      redirect_to new_signup_customer_property_path(@customer)
     else
       flash.now[:danger] = @user.errors.full_messages.join(", ")
       render 'new'

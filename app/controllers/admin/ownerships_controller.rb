@@ -6,9 +6,10 @@ class Admin::OwnershipsController < ApplicationController
     
     @ownership = Ownership.find(params[:id])
     if @ownership.update(ownership_params)
+      flash[:success] = 'Property status update successful'
       redirect_to session.delete(:return_to)
     else
-      flash[:error] = @ownership.errors.full_messages if @ownership.errors
+      flash[:error] = @ownership.errors.full_messages.join(", ")
       redirect_to session.delete(:return_to)
     end
   end

@@ -1,16 +1,18 @@
 require 'rails_helper'
 
 RSpec.describe Signup::PropertiesController, type: :controller do
-  fixtures :properties, :meters
+  fixtures :properties, :meters, :customers
+
+  let(:customer_3) { customers(:c3) }
 
   describe "GET #new" do
     it "returns http success" do
-      get :new, params: { customer_id: Customer.find(3) }
+      get :new, params: { customer_id: customer_3.to_param }
       expect(response).to have_http_status(200)
     end
 
     it "render the new template" do
-      get :new, params: { customer_id: Customer.find(3) }
+      get :new, params: { customer_id: customer_3.to_param }
       expect(response).to render_template("new")
     end
   end
@@ -39,7 +41,7 @@ RSpec.describe Signup::PropertiesController, type: :controller do
       end
 
       it 'redirect to that created game page' do
-        expect(response).to redirect_to(new_signup_customer_property_path({ customer_id: Customer.last.id}))
+        expect(response).to redirect_to(new_signup_customer_property_path({ customer_id: Customer.last.to_param }))
       end
     end
   end

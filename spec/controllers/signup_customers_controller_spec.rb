@@ -6,14 +6,14 @@ RSpec.describe Signup::CustomersController, type: :controller do
   describe 'GET #show' do
     context 'the customer exists' do
       it 'return http success' do
-        get :show, params: { id: Customer.first.id}
+        get :show, params: { :id => Customer.first.to_param}
         expect(response).to have_http_status(200)
       end
     end
 
     context "the user doesn't exist" do
       it "return http response status 404" do
-        get :show, params: { id: Customer.last.id + 1 }
+        get :show, params: { :id => (Customer.last.id + 1).to_s }
         expect(response.status).to eq(404)
       end
     end
@@ -47,7 +47,7 @@ RSpec.describe Signup::CustomersController, type: :controller do
       end
 
       it "redirect to that created game page" do
-        expect(response).to redirect_to(new_signup_customer_user_path({ customer_id: Customer.last.id}))
+        expect(response).to redirect_to(new_signup_customer_user_path({ customer_id: Customer.last.to_param}))
       end
     end
   end

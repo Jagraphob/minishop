@@ -2,6 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Admin::OwnershipsController, type: :controller do
   fixtures :ownerships
+
+  let(:ownership) { ownerships(:o3) }
   
   describe 'PATCH #update' do
     context 'patch an ownership from inactive to active' do
@@ -17,7 +19,7 @@ RSpec.describe Admin::OwnershipsController, type: :controller do
       end
 
       it 'the ownership is updated to active' do
-        expect(Ownership.find(3).status).to eq("active")
+        expect(ownership.status).to eq("active")
       end
     end
   end
