@@ -11,7 +11,7 @@ class Signup::PropertiesController < ApplicationController
     @customer = Customer.find(params[:customer_id])
 
     if @property.save
-      OwnershipService.create_ownership(@customer, @property)
+      OwnershipService.create_ownership(@customer, @property, :pending)
       PropertyService.create_default_meter(@property)
       redirect_to new_signup_customer_property_path(@customer)
     else
