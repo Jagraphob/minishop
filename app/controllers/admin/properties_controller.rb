@@ -20,7 +20,7 @@ class Admin::PropertiesController < ApplicationController
       flash[:success] = 'Property detail update successful'
       redirect_to admin_property_path(@property)
     else
-      flash[:error] = @property.errors.full_messages.join(", ")
+      flash[:danger] = @property.errors.full_messages.join(", ")
       render 'show'
     end
   end
