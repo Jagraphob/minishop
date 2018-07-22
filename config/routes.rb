@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+
   resources :customers do
     resources :properties, :only => [:show] do 
       resources :meters, :only => [:update]
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   end
   
   namespace :admin do
+    resources :prices
     resources :customers, :only => [:index]
     resources :users, :only => [:index]
     resources :ownerships, :only => [:update]
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
       resources :meters, :only => [:update]
     end
 
+    resources :prices
     root 'home#index'
   end
 
