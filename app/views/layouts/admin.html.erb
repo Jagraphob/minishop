@@ -27,6 +27,9 @@
                 <%= link_to admin_root_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/home')}" do %>
                   <%= fa_icon "home"%> Dashboard
                 <% end %>
+                <%= link_to admin_prices_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/prices')}" do %>
+                  <%= fa_icon "dollar"%> Prices
+                <% end %>
                 <%= link_to admin_customers_path, class: "nav-link #{active_class_by_controller_action(controller: 'admin/customers')}" do %>
                   <%= fa_icon "users"%> Customers
                 <% end %>
