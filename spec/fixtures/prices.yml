@@ -1,0 +1,12 @@
+price1:
+  id: 1
+  price: 30.51
+  unit: 'c/kwh'
+price2:
+  id: 2
+  price: 29.82
+  unit: 'c/kwh'
+price3:
+  id: 3
+  price: 30.24
+  unit: 'c/kwh'

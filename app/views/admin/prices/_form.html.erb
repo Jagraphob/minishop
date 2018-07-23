@@ -1,0 +1,11 @@
+<%= form_with :model => [:admin, Price.new], :local => true do |f| %>
+    <div class="form-group">
+      <%= f.label :price %>
+      <div class="input-group">
+        <%= f.text_field :price, :class => 'form-control' %>
+        <%= f.text_field :unit, :class => 'form-control', :value => 'c/kwh' %>
+      </div>
+    </div>
+    <%= f.submit "Save", :class => 'btn btn-success'%>
+<% end %>
+ 

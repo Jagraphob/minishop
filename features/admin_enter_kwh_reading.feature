@@ -13,6 +13,7 @@ Feature: Admin entering index kWh readings to the meter of a property
    When I fill in "Reading" with "1500.35"
    And I click "Save" at "Reading" input group 
    Then I should see "Reading" field as "1500.35"
+   And I should see content "Meter update successful"
 
    
 

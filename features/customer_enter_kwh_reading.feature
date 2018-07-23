@@ -13,4 +13,5 @@ Feature: Customer entering index kWh readings to the meter of a property
    When I fill in "Reading" with "120.125"
    And I click "Save"
    Then I should see "Reading" field as "120.125"
+   And I should see content "Meter reading update successful"
    

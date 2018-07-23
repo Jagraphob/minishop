@@ -1,0 +1,12 @@
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th>Price</th>
+      <th>Unit</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render prices.order(:created_at => :desc) %>
+  </tbody>
+</table>

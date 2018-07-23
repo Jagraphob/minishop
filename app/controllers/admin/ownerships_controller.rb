@@ -9,7 +9,7 @@ class Admin::OwnershipsController < ApplicationController
       flash[:success] = 'Property status update successful'
       redirect_to session.delete(:return_to)
     else
-      flash[:error] = @ownership.errors.full_messages.join(", ")
+      flash[:danger] = @ownership.errors.full_messages.join(", ")
       redirect_to session.delete(:return_to)
     end
   end

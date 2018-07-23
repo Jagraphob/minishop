@@ -1,0 +1,14 @@
+<%= render 'layouts/flash' %>
+<div class="row">
+  <div class="col">
+    <h4 class="stripe-heading">Current Electricity Price</h4>
+    <h4 style=><%= @prices.last.display %></h4>
+  </div>
+  <div class="col left-border">
+    <h4 class="stripe-heading">Update Price</h4>
+    <%= render 'form' %>
+  </div>  
+</div>
+<hr>
+<h4 class="stripe-heading">Price history</h4>
+<%= render 'prices_table', :prices => @prices %>
