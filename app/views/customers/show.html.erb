@@ -5,6 +5,7 @@
     <li class="breadcrumb-item active" aria-current="page">Home</li>
   </ol>
 </nav>
+<h4 class="stripe-heading">Current Electricity Price : <%= @price.display %></h4>
 <h4 class="stripe-heading">Your Properties</h4>
 <%= render 'properties/customers_properties_table', :customer_id => @customer.id, :properties => @customer.properties  %>
-
+<h4 class="stripe-heading">Your bills</h4>
