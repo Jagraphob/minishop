@@ -8,7 +8,7 @@ class Admin::PricesController < ApplicationController
   def create
     @price = Price.new(price_params)
     if @price.save
-      flash[:success] = 'New price added successfully'
+      flash[:success] = 'Price update successful'
     else
       flash[:danger] = @price.errors.full_messages.join(', ')
     end
