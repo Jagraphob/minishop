@@ -4,8 +4,9 @@ class CustomersController < ApplicationController
 
   def show
     @customer = Customer.find(params[:id]) or render_404
+    @price = Price.last
   end
-  
+
   private
 
   def customer_params
