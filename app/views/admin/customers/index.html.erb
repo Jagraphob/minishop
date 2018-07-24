@@ -1,3 +1,33 @@
 <% provide(:active_link, 'customers') %>
 
-<h1>Customers</h1>
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">customers</li>
+  </ol>
+</nav>
+<table class="table table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Active Properties</th>
+      <th scope="col">Last Bill</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.id %></td>
+        <td><%= customer.first_name %></td>
+        <td><%= customer.last_name %></td>
+        <td><%= customer.user.email || ""%></td>
+        <td><%= customer.properties.joins(:ownerships).where(:ownerships => {:status => :active}).count %></td>
+        <td>last bill</td>
+        <td><%= link_to "Manage", admin_customer_path(customer), :class => 'btn btn-success', :role => 'button'  %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
