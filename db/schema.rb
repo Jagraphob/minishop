@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_17_075436) do
+ActiveRecord::Schema.define(version: 2018_07_24_230533) do
 
   create_table "customers", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
     t.string "phone_number", null: false
     t.string "card_number", null: false
+  end
+
+  create_table "meter_readings", force: :cascade do |t|
+    t.integer "meter_id"
+    t.decimal "reading", precision: 16, scale: 4
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["meter_id"], name: "index_meter_readings_on_meter_id"
   end
 
   create_table "meters", force: :cascade do |t|
