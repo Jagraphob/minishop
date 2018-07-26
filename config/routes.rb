@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   resources :customers do
     resources :properties, :only => [:show] do 
-      resources :meters, :only => [:update]
+      resources :meters, :only => [:update] do
+        resources :meter_reading, :only => [:create]
+      end
     end
   end
 
@@ -24,7 +26,9 @@ Rails.application.routes.draw do
     resources :ownerships, :only => [:update]
     resources :properties, :only => [:index, :show, :update] do
       resources :register_serials, :only => [:create, :edit, :destroy]
-      resources :meters, :only => [:update]
+      resources :meters, :only => [:update] do
+        resources :meter_readings, :only => [:create]
+      end
     end
 
     resources :prices
