@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   
   namespace :admin do
     resources :prices
-    resources :customers, :only => [:index]
+    resources :customers, :only => [:index, :show]
     resources :users, :only => [:index]
     resources :ownerships, :only => [:update]
     resources :properties, :only => [:index, :show, :update] do

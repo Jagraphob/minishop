@@ -1,7 +1,8 @@
 module PropertyService
   class << self
     def create_default_meter(property)
-      Meter.create(:property_id => property.id, :reading => 0, :decimal_position => 4)
+      meter = Meter.create(:property_id => property.id, :reading => 0, :decimal_position => 4)
+      meter.meter_readings.create(:reading => 0)
     end
 
     def get_properties_by_ownership_status(status)

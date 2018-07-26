@@ -1,0 +1,24 @@
+mr1:
+  id: 1
+  reading: 0.00
+  meter_id: 1
+mr2:
+  id: 2
+  reading: 10.12
+  meter_id: 1
+mr3:
+  id: 3
+  reading: 0.000
+  meter_id: 2
+mr4:
+  id: 4
+  reading: 4.654
+  meter_id: 2
+mr5:
+  id: 5
+  reading: 0.0000
+  meter_id: 3
+mr6:
+  id: 6
+  reading: 7.849
+  meter_id: 3

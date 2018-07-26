@@ -1,5 +1,6 @@
 class Meter < ApplicationRecord
   belongs_to :property
+  has_many :meter_readings, :dependent => :destroy
 
   validate :reading_stay_or_increase_only
 
@@ -11,6 +12,6 @@ class Meter < ApplicationRecord
   def reading_stay_or_increase_only
     if reading && reading_was
       errors.add(:reading, 'value cannot be decreased') if reading < reading_was
-    end    
+    end
   end
 end

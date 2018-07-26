@@ -1,7 +1,7 @@
 require 'rails_helper'
 require './app/services/property_service.rb'
 
-RSpec.describe OwnershipService do
+RSpec.describe PropertyService do
   fixtures :customers, :properties
 
   let(:property) { properties(:p4)}
@@ -9,8 +9,11 @@ RSpec.describe OwnershipService do
   describe '#create_default_meter' do
     let(:create_default_meter) { PropertyService.create_default_meter(property)}
 
-    it 'creates a meter with 0 reading' do
-      expect{create_default_meter}.to change{ Meter.count }.by(1)
+    it 'creates a default meter' do
+      expect { create_default_meter }.to change { Meter.count }.by(1)
+    end
+    it 'creates a meter reading for the default meter' do
+      expect { create_default_meter }.to change { MeterReading.count }.by(1)
     end
   end
 
@@ -21,7 +24,7 @@ RSpec.describe OwnershipService do
     context 'get active properties' do
       it 'returns 3 properties' do
         expect(get_properties_by_ownership_status.count).to eq(3)
-      end      
+      end
     end
 
     context 'get pending properties' do
