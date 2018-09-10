@@ -14,7 +14,8 @@
     <%= render 'form' %>
   </div>
   <div class="col left-border">
-    <h4 class="stripe-heading">Meter Reading</h4>
+    <h4 class="stripe-heading">Meter</h4>
+    <h4>Current Reading: <%= meter_display(@property.meter) %> kwh</h4>
     <div class="row">
       <div class="col-8">
         <%= render 'admin/meters/reading_form' %>

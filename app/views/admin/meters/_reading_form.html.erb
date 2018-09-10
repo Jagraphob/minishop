@@ -1,10 +1,10 @@
-<%= form_with :model => [:admin, @property, @property.meter], :local => true do |f| %>
+<%= form_with :model => [:admin, @property, @property.meter, @property.meter.meter_readings.new], :local => true do |f| %>
 <div class="form-group">
   <div class="input-group">
     <div class="input-group-prepend">
-      <%= f.label :reading, :class => 'input-group-text input-group-text-label' %>
+      <%= f.label "Update Meter", :class => 'input-group-text input-group-text-label' %>
     </div>
-    <%= f.text_field :reading, :class => 'form-control', :value => (number_with_precision(f.object.reading, :precision => f.object.decimal_position)) %>
+    <%= f.text_field :reading, :class => 'form-control' %>
     <div class="input-group-append">
       <span class="input-group-text input-group-text-unit">kWh</span>
       <%= f.submit "Save", class: "btn btn-success" %>
