@@ -22,7 +22,9 @@ test: &test
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: minishop_production
+  username: minishop
+  password: <%= ENV['MINISHOP_DATABASE_PASSWORD'] %>
 
 cucumber:
   <<: *test
